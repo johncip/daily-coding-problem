@@ -1,4 +1,4 @@
-require './1-arrays-1-product-of-others'
+require './arrays/1_product_of_others'
 
 describe 'product_of_all_other_elements' do
   versions = [

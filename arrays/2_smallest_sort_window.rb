@@ -1,7 +1,6 @@
 # 2. Find the smallest window to be sorted.
 #
-#
-# the first attempt that worked was to sort the array and
+# The first attempt that worked was to sort the array and
 # see what's different.
 #
 # linearithmic time (if sort is), linear space

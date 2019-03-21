@@ -77,6 +77,8 @@ end
 
 # quadratic time, constant space
 def smallest_sort_window_2(arr, l = 0, r = arr.size - 1)
+  return [nil, nil] if l >= r
+
   next_l, next_r = l, r
 
   next_l += 1 if min_on_left?(arr, l, r)

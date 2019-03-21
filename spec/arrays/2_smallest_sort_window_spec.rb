@@ -3,6 +3,7 @@ require './arrays/2_smallest_sort_window'
 versions = [
   'smallest_sort_window_1',
   'smallest_sort_window_2',
+  'smallest_sort_window_3'
 ]
 
 versions.each do |name|

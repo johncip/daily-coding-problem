@@ -7,8 +7,8 @@
 def smallest_sort_window_1(arr)
   sorted = arr.dup.sort
 
-  left = 0
-  right = arr.size - 1
+  left = nil
+  right = nil
 
   (0...arr.size).each do |l|
     if sorted[l] != arr[l]

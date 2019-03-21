@@ -1,4 +1,4 @@
-require './arrays/2_smallest_window_sort'
+require './arrays/2_smallest_sort_window'
 
 describe 'min_on_left?' do
   it 'works for one' do
@@ -34,10 +34,10 @@ describe 'max_on_right?' do
   end
 end
 
-describe 'smallest_window_to_sort' do
+describe 'smallest_sort_window' do
   versions = [
-    lambda { |x| smallest_window_to_sort_1(x) },
-    lambda { |x| smallest_window_to_sort_2(x) },
+    lambda { |x| smallest_sort_window_1(x) },
+    lambda { |x| smallest_sort_window_2(x) },
   ]
 
   versions.each do |fn|

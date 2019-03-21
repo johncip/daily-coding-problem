@@ -5,7 +5,7 @@
 # see what's different.
 #
 # linearithmic time (if sort is), linear space
-def smallest_window_to_sort_1(arr)
+def smallest_sort_window_1(arr)
   sorted = arr.dup.sort
 
   left = 0
@@ -77,11 +77,7 @@ end
 # otherwise, remove l & r and check the new subarray.
 
 # quadratic time, constant space
-def smallest_window_to_sort_2(arr)
-  r_smallest_window_to_sort_2(arr, 0, arr.size - 1)
-end
-
-def r_smallest_window_to_sort_2(arr, l, r)
+def smallest_sort_window_2(arr, l = 0, r = arr.size - 1)
   next_l, next_r = l, r
 
   next_l += 1 if min_on_left?(arr, l, r)
@@ -91,7 +87,7 @@ def r_smallest_window_to_sort_2(arr, l, r)
     return [l, r]
   end
 
-  return r_smallest_window_to_sort_2(arr, next_l, next_r)
+  return smallest_sort_window_2(arr, next_l, next_r)
 end
 
 def min_on_left?(arr, l, r)

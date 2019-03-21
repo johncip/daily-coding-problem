@@ -121,3 +121,55 @@ end
 # - for another, I doubt that the lower bound on actually
 #   sorting is lower than the lower bound on essentially
 #   asking "to what degree" the array is unsorted.
+#
+# ---------------------------------------------------------
+#
+# upon consultation with the book... :(
+#
+def smallest_sort_window_3(arr)
+
+  # right bound:
+  # *last* element that is l.t. the running max (from left)
+
+  right = nil
+  max_seen = arr.first
+
+  (0...arr.size).each do |l|
+    if arr[l] >= max_seen
+      max_seen = arr[l]
+    else
+      right = l
+    end
+  end
+
+  # left bound:
+  # *last* element that is g.t. the running min (from left)
+
+  left = nil
+  min_seen = arr.last
+
+  (arr.size - 1).downto(0).each do |r|
+    if arr[r] <= min_seen
+      min_seen = arr[r]
+    else
+      left = r
+    end
+  end
+
+  return [left, right]
+end
+
+# I was hung up on (e.g.) getting the left bound by scanning
+# from the left and stopping when I'd found it. But that wouldn't
+# work, because (e.g.) knowing if the array is in nondecreasing order
+# means checking all the way to the last element.
+#
+# The book's solution still feels "backwards" and it'd be nice
+# if I could find a way to adjust my intuition.
+
+# oblique strategies for future array problems:
+#
+# - what if I use a running ____ ?
+# - do I need the first element where ____ is true, or the last one?
+# - do I need to scan the whole array to determine this value?
+#   - (in other words, it may not be safe to break)

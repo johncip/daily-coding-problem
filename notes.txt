@@ -1,0 +1,17 @@
+arrays
+
+1. product of other elements
+  - trick: keep a running product
+  - it's the running product * product of the rest
+  - also you can get it down to O(n) by precomputing "suffix" products from the right
+
+2. smallest sort window
+  - right bound is the *last* element that is < a running max (check from left)
+  - left bound is the *last* element that is > a running min (check from right)
+  - trick: don't assume you have to check for the left bound from the left (etc.)
+
+3. maximum subarray sum
+  - trick: imagine that you are computing and storing the max subarray sum *up to* each i.
+  - this is max(prev_sum, 0) + arr[i]
+  - trick: note that you can store them in a single variable, by only keeping the max around
+  - so it's the maximum of each of the "max up to i"

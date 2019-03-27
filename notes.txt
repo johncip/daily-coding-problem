@@ -15,3 +15,9 @@ arrays
   - this is max(prev_sum, 0) + arr[i]
   - trick: note that you can store them in a single variable, by only keeping the max around
   - so it's the maximum of each of the "max up to i"
+
+4. smallest to the right
+  - trick: maintain a separate sorted subarray (in addition to the output array)
+  - uses Python's bisect / insort
+  - I think the book is wrong about the performance of this:
+    - https://docs.python.org/2/library/bisect.html#bisect.insort_left
